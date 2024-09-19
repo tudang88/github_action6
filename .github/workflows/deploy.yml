@@ -1,9 +1,15 @@
 name: Deployment
 on:
+  pull_request:
+    branches:
+      - main
   push:
     branches:
       - main
       - dev
+    paths-ignore:
+      - README.md
+      - .github/workflows/deploy.yml
 env:
   MONGODB_DB_NAME: gha-demo
 jobs:
